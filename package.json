@@ -1,0 +1,29 @@
+{
+  "name": "logdatatofile",
+  "version": "1.0.1",
+  "description": "Writing data on file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmJaradat01/logDataToFile.git"
+  },
+  "keywords": [
+    "log",
+    "data",
+    "file",
+    "fs",
+    "filestream",
+    "string",
+    "append",
+    "header"
+  ],
+  "author": "Ali Jaradat (AmJaradat01@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AmJaradat01/logDataToFile/issues"
+  },
+  "homepage": "https://github.com/AmJaradat01/logDataToFile#readme"
+}
