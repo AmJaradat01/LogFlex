@@ -8,18 +8,14 @@ let mm_dd = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
 
 /**
  * @param {String} fileName name of the file that will export {ex: result.csv || data.log etc...}
- * @param {any} dataHeader1 Mandetory data field
- * @param {any} dataHeader2 Mandetory data field
- * @param  {...any} dataHeader3 Optinal data field
-
- * @param {String} fileName name of the file that will export {ex: result.csv || data.log etc...}
- * @param {*} DateTimeStampFormat select one of these timestamps, 'dd-mm-yyyy', 'mm-dd-yyyy', 'dd-mm', 'mm-dd', or '' for no timestamp.
- * @param {*} fileExtention put the file extenstion like '.csv', '.txt', '.log', etc...
- * @param {any} dataHeader1 Mandatory data field
- * @param {any} dataHeader2 Mandatory data field
- * @param  {...any} dataHeader3 Optinal data fields
+ * @param {string} DateTimeStampFormat select one of these timestamps, 'dd-mm-yyyy', 'mm-dd-yyyy', 'dd-mm', 'mm-dd', or '' for no timestamp.
+ * @param {string} fileExtention put the file extenstion like '.csv', '.txt', '.log', etc...
+ * @param {any} data1 Mandatory data field
+ * @param {any} data2 Mandatory data field
+ * @param  {...any} dataX Optinal data fields
  */
-module.exports = function logDataToFile(fileName, DateTimeStampFormat, fileExtension, dataHeader1, dataHeader2, ...dataHeaderX) {
+
+module.exports = function logDataToFile(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX) {
 
     switch (DateTimeStampFormat) {
         case "dd-mm-yyyy":
@@ -38,8 +34,7 @@ module.exports = function logDataToFile(fileName, DateTimeStampFormat, fileExten
             DateTimeStampFormat = '';
             break;
     }
-    fs.appendFile(`${fileName}${DateTimeStampFormat}${fileExtension}`, `${dataHeader1},${dataHeader2},${dataHeaderX}\n`, function (err) {
+    fs.appendFile(`${fileName}${DateTimeStampFormat}${fileExtension}`, `${data1},${data2},${dataX}\n`, function (err) {
         if (err) throw err;
-        //console.log('Saved!');
     });
 }

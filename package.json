@@ -1,14 +1,14 @@
 {
   "name": "logdatatofile",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Writing data on file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmJaradat01/logDataToFile.git"
+    "url": "https://github.com/AmJaradat01/logDataToFile.git"
   },
   "keywords": [
     "log",
@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/AmJaradat01/logDataToFile/issues"
   },
-  "homepage": "https://github.com/AmJaradat01/logDataToFile#readme"
+  "homepage": "https://github.com/AmJaradat01/logDataToFile#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
 }
