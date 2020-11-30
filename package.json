@@ -1,6 +1,6 @@
 {
   "name": "logdatatofile",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Writing data on file",
   "main": "index.js",
   "scripts": {
