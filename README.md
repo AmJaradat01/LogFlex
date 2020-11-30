@@ -18,16 +18,17 @@ logData('output', 'dd-mm-yyyy', '.csv', 'data1', 'data2', 'dataX');
 const logData = require('logdatatofile');
 let fileName = 'output';
 let fileExtension = '.csv';
-let DateTimeStampFormat = 'dd-mm-yyyy'; //['mm-dd-yyyy', 'dd-mm', 'mm-dd']
+let DateTimeStampFormat = 'dd-mm-yyyy'; //[mm-dd-yyyy, dd-mm, mm-dd, dd-mm-yyyy-mn, mm-dd-yyyy-mn, dd-mm-mn, mm-dd-mn]
 
 
 logData(fileName, DateTimeStampFormat, fileExtension, 'data1', 'data2', 'dataX');
 ```
 
+>File name Example "output20-11-2020.csv"
 >At leaset you should add two data inputs
 
 ```js
-logData(fileName, DateTimeStampFormat, fileExtension, dataHeader1, dataHeader2, ...dataHeaderX)
+logData(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX)
 ```
 
 ### Date TimeStamp Format Options
@@ -36,3 +37,8 @@ logData(fileName, DateTimeStampFormat, fileExtension, dataHeader1, dataHeader2, 
 - mm-dd-yyyy
 - dd-mm
 - mm-dd
+- dd-mm-yyyy-mn
+- mm-dd-yyyy-mn
+- dd-mm-mn
+- mm-dd-mn
+- default
