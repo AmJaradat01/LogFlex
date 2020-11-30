@@ -1,15 +1,26 @@
 const fs = require('fs');
 
 let current_datetime = new Date()
+
 let dd_mm_yyyy = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear();
 let mm_dd_yyyy = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + "-" + current_datetime.getFullYear();
 let dd_mm = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1);
 let mm_dd = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate();
 
-let dd_mm_yyyy_mm = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear() + '-' + current_datetime.getMinutes();
-let mm_dd_yyyy_mm = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + "-" + current_datetime.getFullYear() + '-' + current_datetime.getMinutes();
-let dd_mm_mm = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + '-' + current_datetime.getMinutes();
-let mm_dd_mm = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + '-' + current_datetime.getMinutes();
+let ddmmyyyy = current_datetime.getDate() + (current_datetime.getMonth() + 1) + current_datetime.getFullYear();
+let mmddyyyy = (current_datetime.getMonth() + 1) + current_datetime.getDate() + current_datetime.getFullYear();
+let ddmm = current_datetime.getDate() + (current_datetime.getMonth() + 1);
+let mmdd = (current_datetime.getMonth() + 1) + current_datetime.getDate();
+
+let dd_mm_yyyy_mn = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear() + '-' + current_datetime.getMinutes();
+let mm_dd_yyyy_mn = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + "-" + current_datetime.getFullYear() + '-' + current_datetime.getMinutes();
+let dd_mm_mn = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + '-' + current_datetime.getMinutes();
+let mm_dd_mn = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + '-' + current_datetime.getMinutes();
+
+let ddmmyyyymm = current_datetime.getDate() + (current_datetime.getMonth() + 1) + current_datetime.getFullYear() + current_datetime.getMinutes();
+let mmddyyyymm = (current_datetime.getMonth() + 1) + current_datetime.getDate() + current_datetime.getFullYear() + current_datetime.getMinutes();
+let ddmmmm = current_datetime.getDate() + (current_datetime.getMonth() + 1) + current_datetime.getMinutes();
+let mmddmm = (current_datetime.getMonth() + 1) + current_datetime.getDate() + current_datetime.getMinutes();
 
 /**
  * @param {String} fileName name of the file that will export {ex: result.csv || data.log etc...}
@@ -19,7 +30,6 @@ let mm_dd_mm = (current_datetime.getMonth() + 1) + "-" + current_datetime.getDat
  * @param {any} data2 Mandatory data field
  * @param  {...any} dataX Optinal data fields
  */
-
 module.exports = function logDataToFile(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX) {
     DateTimeStampFormat = DateTimeStampFormat.toLocaleLowerCase();
     switch (DateTimeStampFormat) {
@@ -36,22 +46,51 @@ module.exports = function logDataToFile(fileName, DateTimeStampFormat, fileExten
             DateTimeStampFormat = mm_dd;
             break;
 
-        case "dd-mm-yyyy-mn":
-            DateTimeStampFormat = dd_mm_yyyy_mm;
+        case "ddmmyyyy":
+            DateTimeStampFormat = ddmmyyyy;
             break;
-        case "mm-dd-yyyy-mn":
-            DateTimeStampFormat = mm_dd_yyyy_mm;
+        case "mmddyyyy":
+            DateTimeStampFormat = mmddyyyy;
             break;
-        case "dd-mm-mn":
-            DateTimeStampFormat = dd_mm_mm;
+        case "ddmm":
+            DateTimeStampFormat = ddmm;
             break;
-        case "mm-dd-mn":
-            DateTimeStampFormat = mm_dd_mm;
-            break;
-        case "default":
-            DateTimeStampFormat = dd_mm_yyyy_mm;
+        case "mmdd":
+            DateTimeStampFormat = mmdd;
             break;
 
+        case "dd-mm-yyyy-mn":
+            DateTimeStampFormat = dd_mm_yyyy_mn;
+            break;
+        case "mm-dd-yyyy-mn":
+            DateTimeStampFormat = mm_dd_yyyy_mn;
+            break;
+        case "dd-mm-mn":
+            DateTimeStampFormat = dd_mm_mn;
+            break;
+        case "mm-dd-mn":
+            DateTimeStampFormat = mm_dd_mn;
+            break;
+
+        case "ddmmyyyymm":
+            DateTimeStampFormat = ddmmyyyymm;
+            break;
+        case "mmddyyyymm":
+            DateTimeStampFormat = mmddyyyymm;
+            break;
+        case "ddmmmm":
+            DateTimeStampFormat = ddmmmm;
+            break;
+        case "mmddmm":
+            DateTimeStampFormat = mmddmm;
+            break;
+
+        case "unidate":
+            DateTimeStampFormat = current_datetime;
+            break;
+        case "default":
+            DateTimeStampFormat = dd_mm_yyyy_mn;
+            break;
         default:
             DateTimeStampFormat = '';
             break;

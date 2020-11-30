@@ -18,7 +18,7 @@ logData('output', 'dd-mm-yyyy', '.csv', 'data1', 'data2', 'dataX');
 const logData = require('logdatatofile');
 let fileName = 'output';
 let fileExtension = '.csv';
-let DateTimeStampFormat = 'dd-mm-yyyy'; //[mm-dd-yyyy, dd-mm, mm-dd, dd-mm-yyyy-mn, mm-dd-yyyy-mn, dd-mm-mn, mm-dd-mn]
+let DateTimeStampFormat = 'dd-mm-yyyy';
 
 
 logData(fileName, DateTimeStampFormat, fileExtension, 'data1', 'data2', 'dataX');
@@ -37,8 +37,21 @@ logData(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX)
 - mm-dd-yyyy
 - dd-mm
 - mm-dd
+
+- ddmmyyyy
+- mmddyyyy
+- ddmm
+- mmdd
+
 - dd-mm-yyyy-mn
 - mm-dd-yyyy-mn
 - dd-mm-mn
 - mm-dd-mn
+
+- ddmmyyyymn
+- mmddyyyymn
+- ddmmmn
+- mmddmn
+
+- unidate
 - default
