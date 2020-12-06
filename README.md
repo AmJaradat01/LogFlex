@@ -33,25 +33,30 @@ logData(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX)
 
 ### Date TimeStamp Format Options
 
-- dd-mm-yyyy
-- mm-dd-yyyy
-- dd-mm
-- mm-dd
-
-- ddmmyyyy
-- mmddyyyy
-- ddmm
-- mmdd
-
-- dd-mm-yyyy-mn
-- mm-dd-yyyy-mn
-- dd-mm-mn
-- mm-dd-mn
-
-- ddmmyyyymn
-- mmddyyyymn
-- ddmmmn
-- mmddmn
-
-- unidate
-- default
+| DateTime Format | Result                   |
+|:---------------:|:------------------------:|
+|    dd-mm-yyyy   |        6-12-2020         |
+|    mm-dd-yyyy   |        12-6-2020         |
+|     ddmmyyyy    |         6122020          |
+|     mmddyyyy    |  1262020                 |
+|    yyyy-mm-dd   | 2020-12-6                |
+|    yyyy-dd-mm   | 2020-6-12                |
+|     yyyymmdd    |  2020126                 |
+|     yyyyddmm    |  2020612                 |
+|       dd-mm     |   6-12                   |
+|       mm-dd     |   12-6                   |
+|       ddmm      |    612                   |
+|       ddmm      |    126                   |
+| dd-mm-yyyy-Time |  6-12-2020T14:33         |
+| ddmmyyyy-Time   |  6122020T14:33           |
+| mm-dd-yyyy-Time |  12-6-2020T14:33         |
+| mmddyyyy-Time   |  6122020T14:33           |
+| yyyy-mm-dd-Time |  2020-12-6T14:33         |
+| yyyy-dd-mm-Time |  2020-6-12T14:33         |
+| yyyymmdd-Time   |  2020126T14:33           |
+| yyyyddmm-Time   |  2020612T14:33           |
+| ddmm-Time       |  612T14:33               |
+| mm-dd-Time      |  12-6T14:33              |
+| mmdd-Time       |  12-6T14:33              |
+| dd-mm-Time      |  6-12T14:33              |
+| default         | 2020-12-06T12:20:08.335Z |
