@@ -22,116 +22,116 @@ let mm_dd = `${day}-${month}`;
 let ddmm = `${day}${month}`;
 let mmdd = `${month}${day}`;
 
-let dd_mm_yyyy_Time = `${dd_mm_yyyy}T${hour}:${minutes}`;
-let ddmmyyyy_Time = `${ddmmyyyy}T${hour}:${minutes}`;
-let mm_dd_yyyy_Time = `${mm_dd_yyyy}T${hour}:${minutes}`;
-let mmddyyyy_Time = `${mmddyyyy}T${hour}:${minutes}`;
+let dd_mm_yyyy_time = `${dd_mm_yyyy}T${hour}:${minutes}`;
+let ddmmyyyy_time = `${ddmmyyyy}T${hour}:${minutes}`;
+let mm_dd_yyyy_time = `${mm_dd_yyyy}T${hour}:${minutes}`;
+let mmddyyyy_time = `${mmddyyyy}T${hour}:${minutes}`;
 
-let yyyy_mm_dd_Time = `${yyyy_mm_dd}T${hour}:${minutes}`;
-let yyyy_dd_mm_Time = `${yyyy_dd_mm}T${hour}:${minutes}`;
-let yyyymmdd_Time = `${yyyymmdd}T${hour}:${minutes}`;
-let yyyyddmm_Time = `${yyyyddmm}T${hour}:${minutes}`;
+let yyyy_mm_dd_time = `${yyyy_mm_dd}T${hour}:${minutes}`;
+let yyyy_dd_mm_time = `${yyyy_dd_mm}T${hour}:${minutes}`;
+let yyyymmdd_time = `${yyyymmdd}T${hour}:${minutes}`;
+let yyyyddmm_time = `${yyyyddmm}T${hour}:${minutes}`;
 
-let dd_mm_Time = `${dd_mm}T${hour}:${minutes}`;
-let mm_dd_Time = `${mm_dd}T${hour}:${minutes}`;
-let ddmm_Time = `${ddmm}T${hour}:${minutes}`;
-let mmdd_Time = `${mmdd}T${hour}:${minutes}`;
+let dd_mm_time = `${dd_mm}T${hour}:${minutes}`;
+let mm_dd_time = `${mm_dd}T${hour}:${minutes}`;
+let ddmm_time = `${ddmm}T${hour}:${minutes}`;
+let mmdd_time = `${mmdd}T${hour}:${minutes}`;
 
 
 /**
  * @param {String} fileName name of the file that will export {ex: result.csv || data.log etc...}
- * @param {string} DateTimeStampFormat select one of these timestamps, 'dd-mm-yyyy', 'mm-dd-yyyy', 'dd-mm', 'mm-dd', or '' for no timestamp.
+ * @param {string} DatetimeStampFormat select one of these timestamps, 'dd-mm-yyyy', 'mm-dd-yyyy', 'dd-mm', 'mm-dd', or '' for no timestamp.
  * @param {string} fileExtention put the file extenstion like '.csv', '.txt', '.log', etc...
  * @param {any} data1 Mandatory data field
  * @param {any} data2 Mandatory data field
  * @param  {...any} dataX Optinal data fields
  * @returns {void}
  */
-module.exports = function logDataToFile(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX) {
-    DateTimeStampFormat = DateTimeStampFormat.toLocaleLowerCase();
-    switch (DateTimeStampFormat) {
+module.exports = function logDataToFile(fileName, DatetimeStampFormat, fileExtension, data1, data2, ...dataX) {
+    DatetimeStampFormat = DatetimeStampFormat.toLocaleLowerCase();
+    switch (DatetimeStampFormat) {
         case "dd-mm-yyyy":
-            DateTimeStampFormat = dd_mm_yyyy;
+            DatetimeStampFormat = dd_mm_yyyy;
             break;
         case "mm-dd-yyyy":
-            DateTimeStampFormat = mm_dd_yyyy;
+            DatetimeStampFormat = mm_dd_yyyy;
             break;
         case "ddmmyyyy":
-            DateTimeStampFormat = ddmmyyyy;
+            DatetimeStampFormat = ddmmyyyy;
             break;
         case "mmddyyyy":
-            DateTimeStampFormat = mmddyyyy;
+            DatetimeStampFormat = mmddyyyy;
             break;
         case "yyyy-mm-dd":
-            DateTimeStampFormat = yyyy_mm_dd;
+            DatetimeStampFormat = yyyy_mm_dd;
             break;
         case "yyyy-dd-mm":
-            DateTimeStampFormat = yyyy_dd_mm;
+            DatetimeStampFormat = yyyy_dd_mm;
             break;
         case "yyyymmdd":
-            DateTimeStampFormat = yyyymmdd;
+            DatetimeStampFormat = yyyymmdd;
             break;
         case "yyyyddmm":
-            DateTimeStampFormat = yyyyddmm;
+            DatetimeStampFormat = yyyyddmm;
             break;
         case "dd-mm":
-            DateTimeStampFormat = dd_mm;
+            DatetimeStampFormat = dd_mm;
             break;
         case "mm-dd":
-            DateTimeStampFormat = mm_dd;
+            DatetimeStampFormat = mm_dd;
             break;
         case "ddmm":
-            DateTimeStampFormat = ddmm;
+            DatetimeStampFormat = ddmm;
             break;
         case "mmdd":
-            DateTimeStampFormat = mmdd;
+            DatetimeStampFormat = mmdd;
             break;
-        case "dd-mm-yyyy-Time":
-            DateTimeStampFormat = dd_mm_yyyy_Time;
+        case "dd-mm-yyyy-time":
+            DatetimeStampFormat = dd_mm_yyyy_time;
             break;
-        case "ddmmyyyy-Time":
-            DateTimeStampFormat = ddmmyyyy_Time;
+        case "ddmmyyyy-time":
+            DatetimeStampFormat = ddmmyyyy_time;
             break;
-        case "mm-dd-yyyy-Time":
-            DateTimeStampFormat = mm_dd_yyyy_Time;
+        case "mm-dd-yyyy-time":
+            DatetimeStampFormat = mm_dd_yyyy_time;
             break;
-        case "mmddyyyy-Time":
-            DateTimeStampFormat = mmddyyyy_Time;
+        case "mmddyyyy-time":
+            DatetimeStampFormat = mmddyyyy_time;
             break;
-        case "yyyy-mm-dd-Time":
-            DateTimeStampFormat = yyyy_mm_dd_Time;
+        case "yyyy-mm-dd-time":
+            DatetimeStampFormat = yyyy_mm_dd_time;
             break;
-        case "yyyy-dd-mm-Time":
-            DateTimeStampFormat = yyyy_dd_mm_Time;
+        case "yyyy-dd-mm-time":
+            DatetimeStampFormat = yyyy_dd_mm_time;
             break;
-        case "yyyymmdd-Time":
-            DateTimeStampFormat = yyyymmdd_Time;
+        case "yyyymmdd-time":
+            DatetimeStampFormat = yyyymmdd_time;
             break;
-        case "yyyyddmm-Time":
-            DateTimeStampFormat = yyyyddmm_Time;
+        case "yyyyddmm-time":
+            DatetimeStampFormat = yyyyddmm_time;
             break;
-        case "ddmm-Time":
-            DateTimeStampFormat = ddmm_Time;
+        case "ddmm-time":
+            DatetimeStampFormat = ddmm_time;
             break;
-        case "mm-dd-Time":
-            DateTimeStampFormat = mm_dd_Time;
+        case "mm-dd-time":
+            DatetimeStampFormat = mm_dd_time;
             break;
-        case "mmdd-Time":
-            DateTimeStampFormat = mmdd_Time;
+        case "mmdd-time":
+            DatetimeStampFormat = mmdd_time;
             break;
-        case "dd-mm-Time":
-            DateTimeStampFormat = dd_mm_Time;
+        case "dd-mm-time":
+            DatetimeStampFormat = dd_mm_time;
             break;
         case "default":
-            DateTimeStampFormat = date;
+            DatetimeStampFormat = date;
             break;
 
         default:
-            DateTimeStampFormat = "";
+            DatetimeStampFormat = "";
             break;
     }
 
-    fs.appendFile(`${fileName}${DateTimeStampFormat}${fileExtension}`, `${data1},${data2},${dataX}\n`, function (err) {
+    fs.appendFile(`${fileName}${DatetimeStampFormat}${fileExtension}`, `${data1},${data2},${dataX}\n`, function (err) {
         if (err) throw err;
     });
 }
