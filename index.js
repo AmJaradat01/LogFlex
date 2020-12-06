@@ -2,7 +2,7 @@ const fs = require('fs');
 
 let date = new Date()
 let year = date.getUTCFullYear();
-let month = date.getUTCMonth() + 1;
+let month = (date.getUTCMonth() + 1);
 let day = date.getUTCDate();
 let hour = date.getHours();
 let minutes = date.getMinutes();
@@ -18,24 +18,24 @@ let yyyymmdd = `${year}${month}${day}`;
 let yyyyddmm = `${year}${day}${month}`;
 
 let dd_mm = `${day}-${month}`;
-let mm_dd = `${day}-${month}`;
+let mm_dd = `${month}-${day}`;
 let ddmm = `${day}${month}`;
 let mmdd = `${month}${day}`;
 
-let dd_mm_yyyy_time = `${dd_mm_yyyy}T${hour}:${minutes}`;
-let ddmmyyyy_time = `${ddmmyyyy}T${hour}:${minutes}`;
-let mm_dd_yyyy_time = `${mm_dd_yyyy}T${hour}:${minutes}`;
-let mmddyyyy_time = `${mmddyyyy}T${hour}:${minutes}`;
+let dd_mm_yyyy_time = `${dd_mm_yyyy}T${hour}_${minutes}`;
+let ddmmyyyy_time = `${ddmmyyyy}T${hour}_${minutes}`;
+let mm_dd_yyyy_time = `${mm_dd_yyyy}T${hour}_${minutes}`;
+let mmddyyyy_time = `${mmddyyyy}T${hour}_${minutes}`;
 
-let yyyy_mm_dd_time = `${yyyy_mm_dd}T${hour}:${minutes}`;
-let yyyy_dd_mm_time = `${yyyy_dd_mm}T${hour}:${minutes}`;
-let yyyymmdd_time = `${yyyymmdd}T${hour}:${minutes}`;
-let yyyyddmm_time = `${yyyyddmm}T${hour}:${minutes}`;
+let yyyy_mm_dd_time = `${yyyy_mm_dd}T${hour}_${minutes}`;
+let yyyy_dd_mm_time = `${yyyy_dd_mm}T${hour}_${minutes}`;
+let yyyymmdd_time = `${yyyymmdd}T${hour}_${minutes}`;
+let yyyyddmm_time = `${yyyyddmm}T${hour}_${minutes}`;
 
-let dd_mm_time = `${dd_mm}T${hour}:${minutes}`;
-let mm_dd_time = `${mm_dd}T${hour}:${minutes}`;
-let ddmm_time = `${ddmm}T${hour}:${minutes}`;
-let mmdd_time = `${mmdd}T${hour}:${minutes}`;
+let dd_mm_time = `${dd_mm}T${hour}_${minutes}`;
+let mm_dd_time = `${mm_dd}T${hour}_${minutes}`;
+let ddmm_time = `${ddmm}T${hour}_${minutes}`;
+let mmdd_time = `${mmdd}T${hour}_${minutes}`;
 
 
 /**
