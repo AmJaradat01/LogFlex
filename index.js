@@ -43,11 +43,10 @@ let mmdd_time = `${mmdd}T${hour}_${minutes}`;
  * @param {string} DatetimeStampFormat select one of these timestamps, 'dd-mm-yyyy', 'mm-dd-yyyy', 'dd-mm', 'mm-dd', or '' for no timestamp.
  * @param {string} fileExtention put the file extenstion like '.csv', '.txt', '.log', etc...
  * @param {any} data1 Mandatory data field
- * @param {any} data2 Mandatory data field
  * @param  {...any} dataX Optinal data fields
  * @returns {void}
  */
-module.exports = function logDataToFile(fileName, DatetimeStampFormat, fileExtension, data1, data2, ...dataX) {
+module.exports = function logDataToFile(fileName, DatetimeStampFormat, fileExtension, datatolog, ...datatologX) {
     DatetimeStampFormat = DatetimeStampFormat.toLocaleLowerCase();
     switch (DatetimeStampFormat) {
         case "dd-mm-yyyy":
@@ -131,7 +130,7 @@ module.exports = function logDataToFile(fileName, DatetimeStampFormat, fileExten
             break;
     }
 
-    fs.appendFile(`${fileName}${DatetimeStampFormat}${fileExtension}`, `${data1},${data2},${dataX}\n`, function (err) {
+    fs.appendFile(`${fileName}${DatetimeStampFormat}${fileExtension}`, `${datatolog},${datatologX}\n`, function (err) {
         if (err) throw err;
     });
 }
