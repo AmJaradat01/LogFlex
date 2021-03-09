@@ -11,7 +11,7 @@ npm i logdatatofile
 ```js
 const logData = require('logdatatofile');
 
-logData('output', 'dd-mm-yyyy', '.csv', 'data1', 'data2', 'dataX');
+logData('output', 'dd-mm-yyyy', '.csv', 'data1', 'dataX');
 ```
 
 ```js
@@ -21,14 +21,14 @@ let fileExtension = '.csv';
 let DateTimeStampFormat = 'dd-mm-yyyy';
 
 
-logData(fileName, DateTimeStampFormat, fileExtension, 'data1', 'data2', 'dataX');
+logData(fileName, DateTimeStampFormat, fileExtension, 'data1', 'dataX');
 ```
 
 >File name Example "output20-11-2020.csv"
 >At leaset you should add two data inputs
 
 ```js
-logData(fileName, DateTimeStampFormat, fileExtension, data1, data2, ...dataX)
+logData(fileName, DateTimeStampFormat, fileExtension, data1, ...dataX)
 ```
 
 ### Date TimeStamp Format Options
