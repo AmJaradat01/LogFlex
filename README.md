@@ -1,62 +1,109 @@
-# log Data To File
+# logDataToFile
 
-## install
+A utility for logging data to a file with customizable options.
 
-```shell
-npm i logdatatofile
+## Installation
+
+```bash
+npm install logdatatofile
 ```
 
-## Using
+## Usage
+
+### Basic Usage
+
+By default, the library logs data to a text file (log.txt) in the logs directory:
 
 ```js
-const logData = require('logdatatofile');
+import { logDataToFile } from 'logdatatofile';
 
-logData('output', 'dd-mm-yyyy', '.csv', 'data1', 'dataX');
+logDataToFile('This is a log message');
 ```
+
+### Custom File Path
+
+You can specify a custom file path for the log file:
 
 ```js
-const logData = require('logdatatofile');
-let fileName = 'output';
-let fileExtension = '.csv';
-let DateTimeStampFormat = 'dd-mm-yyyy';
-
-
-logData(fileName, DateTimeStampFormat, fileExtension, 'data1', 'dataX');
+logDataToFile('This is a log message in a custom file', {
+  filePath: './logs/custom-log'
+});
 ```
 
->File name Example "output20-11-2020.csv"
->At leaset you should add two data inputs
+### Logging to a CSV File
+
+To log data in CSV format, set the fileType option to 'csv':
 
 ```js
-logData(fileName, DateTimeStampFormat, fileExtension, data1, ...dataX)
+logDataToFile('This is a log message in CSV', {
+  filePath: './logs/custom-log',
+  fileType: 'csv'
+});
 ```
 
-### Date TimeStamp Format Options
+### Custom Date Format and Log Level
 
-| DateTime Format | Result                   |
-|:---------------:|:------------------------:|
-|    dd-mm-yyyy   |        6-12-2020         |
-|    mm-dd-yyyy   |        12-6-2020         |
-|     ddmmyyyy    |         6122020          |
-|     mmddyyyy    |  1262020                 |
-|    yyyy-mm-dd   | 2020-12-6                |
-|    yyyy-dd-mm   | 2020-6-12                |
-|     yyyymmdd    |  2020126                 |
-|     yyyyddmm    |  2020612                 |
-|       dd-mm     |   6-12                   |
-|       mm-dd     |   12-6                   |
-|       ddmm      |    612                   |
-|       ddmm      |    126                   |
-| dd-mm-yyyy-Time |  6-12-2020T14_33         |
-| ddmmyyyy-Time   |  6122020T14_33           |
-| mm-dd-yyyy-Time |  12-6-2020T14_33         |
-| mmddyyyy-Time   |  6122020T14_33           |
-| yyyy-mm-dd-Time |  2020-12-6T14_33         |
-| yyyy-dd-mm-Time |  2020-6-12T14_33         |
-| yyyymmdd-Time   |  2020126T14_33           |
-| yyyyddmm-Time   |  2020612T14_33           |
-| ddmm-Time       |  612T14_33               |
-| mm-dd-Time      |  12-6T14_33              |
-| mmdd-Time       |  12-6T14_33              |
-| dd-mm-Time      |  6-12T14_33              |
-| default         | 2020-12-06T12:20:08.335Z |
+You can customize the date format and log level:
+
+```js
+logDataToFile('This is a custom log message', {
+  filePath: './logs/custom-log',
+  dateFormat: 'yyyy/MM/dd HH:mm',
+  logLevel: 'error'
+});
+```
+
+## Options
+
+- **filePath:** Path to the log file (default: ./logs/log)
+- **dateFormat:** Format for the timestamp (default: yyyy-MM-dd HH:mm:ss)
+- **logLevel:** Log level (info, warning, error) (default: info)
+- **fileType:** File type (txt or csv) (default: txt)
+
+## Log File Formats
+
+### TXT Format
+
+When logging to a TXT file, the log entries will be in the following format:
+
+```css
+Timestamp    Level    Message
+[2024-07-07 12:34:56] [INFO] This is a log message
+```
+
+### CSV Format
+
+```arduino
+"Timestamp","Level","Message"
+"2024-07-07 12:34:56","INFO","This is a log message"
+```
+
+## Example
+
+```js
+import { logDataToFile } from 'logdatatofile';
+
+// Log to a text file
+logDataToFile('This is a log message');
+
+// Log to a CSV file
+logDataToFile('This is a log message in CSV', {
+  filePath: './logs/custom-log',
+  fileType: 'csv'
+});
+
+// Log to a custom text file
+logDataToFile('This is a custom log message', {
+  filePath: './logs/custom-log',
+  dateFormat: 'yyyy/MM/dd HH:mm',
+  logLevel: 'error'
+});
+```
+
+## Contributing
+
+Please read [CONTRIBUTING](CONTRIBUTING) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

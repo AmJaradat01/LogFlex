@@ -1,0 +1,37 @@
+## Contributing to logDataToFile
+
+We welcome contributions to the logDataToFile project! Please read through the following guidelines before contributing.
+
+### Code of Conduct
+
+This project adheres to the Contributor Covenant code of conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to [AmJaradat01@gmail.com](mailto:AmJaradat01@gmail.com).
+
+### How to Contribute
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Run tests to ensure everything is working (`npm test`).
+5. Commit your changes (`git commit -am 'Add new feature'`).
+6. Push to the branch (`git push origin feature-branch`).
+7. Create a new Pull Request.
+
+### Running Tests
+
+To run tests, use the following command:
+
+```bash
+npm test
+```
+
+Ensure your code passes all existing tests and add new tests for your changes if necessary.
+
+### Style Guide
+
+- Use TypeScript: Ensure type safety and consistency.
+- Follow coding standards: Maintain consistent coding styles and practices.
+- Document your code: Provide comments and documentation where necessary.
+
+### Reporting Issues
+
+If you encounter any issues, please report them using the GitHub Issues feature.

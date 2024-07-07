@@ -1,3 +1,33 @@
+# Node modules directory
 node_modules/
-test/
+
+# Build output directory
+dist/
+
+# Log files
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Typescript compiled files
+*.tsbuildinfo
+
+# Jest coverage directory
 coverage/
+
+# Environment variables file
+.env
+
+# Temporary files
+*.tmp
+*.temp
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+
+# MacOS specific files
+.DS_Store

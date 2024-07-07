@@ -1,0 +1,42 @@
+# Source files
+src/
+
+# Tests
+tests/
+__tests__/
+
+# Configuration files
+tsconfig.json
+jest.config.js
+
+# Build scripts
+*.sh
+
+# Documentation
+README.md
+CONTRIBUTING.md
+
+# Miscellaneous
+*.log
+*.tmp
+*.temp
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor directories and files
+.vscode/
+.idea/
+
+# Environment variables file
+.env
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Other unnecessary files
+.npmignore
