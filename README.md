@@ -1,11 +1,11 @@
-# logDataToFile
+# LogFlex
 
-A utility for logging data to a file with customizable options.
+A flexible logging utility for Node.js with support for TXT, CSV, JSON formats, and more.
 
 ## Installation
 
 ```bash
-npm install logdatatofile
+npm install LogFlex
 ```
 
 ## Usage
@@ -15,9 +15,9 @@ npm install logdatatofile
 By default, the library logs data to a text file (log.txt) in the logs directory:
 
 ```js
-import { logDataToFile } from 'logdatatofile';
+import { LogFlex } from 'LogFlex';
 
-logDataToFile('This is a log message');
+LogFlex('This is a log message');
 ```
 
 ### Custom File Path
@@ -25,7 +25,7 @@ logDataToFile('This is a log message');
 You can specify a custom file path for the log file:
 
 ```js
-logDataToFile('This is a log message in a custom file', {
+LogFlex('This is a log message in a custom file', {
   filePath: './logs/custom-log'
 });
 ```
@@ -35,7 +35,7 @@ logDataToFile('This is a log message in a custom file', {
 To log data in CSV format, set the fileType option to 'csv':
 
 ```js
-logDataToFile('This is a log message in CSV', {
+LogFlex('This is a log message in CSV', {
   filePath: './logs/custom-log',
   fileType: 'csv'
 });
@@ -46,7 +46,7 @@ logDataToFile('This is a log message in CSV', {
 You can customize the date format and log level:
 
 ```js
-logDataToFile('This is a custom log message', {
+LogFlex('This is a custom log message', {
   filePath: './logs/custom-log',
   dateFormat: 'yyyy/MM/dd HH:mm',
   logLevel: 'error'
@@ -81,19 +81,19 @@ Timestamp    Level    Message
 ## Example
 
 ```js
-import { logDataToFile } from 'logdatatofile';
+import { LogFlex } from 'LogFlex';
 
 // Log to a text file
-logDataToFile('This is a log message');
+LogFlex('This is a log message');
 
 // Log to a CSV file
-logDataToFile('This is a log message in CSV', {
+LogFlex('This is a log message in CSV', {
   filePath: './logs/custom-log',
   fileType: 'csv'
 });
 
 // Log to a custom text file
-logDataToFile('This is a custom log message', {
+LogFlex('This is a custom log message', {
   filePath: './logs/custom-log',
   dateFormat: 'yyyy/MM/dd HH:mm',
   logLevel: 'error'

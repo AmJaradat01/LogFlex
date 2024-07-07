@@ -1,8 +1,8 @@
-import { logDataToFile } from "../src";
+import { LogFlex } from "../src";
 import fs from "fs";
 import path from "path";
 
-describe("logDataToFile", () => {
+describe("LogFlex", () => {
   const testLogTxtPath = "./logs/test-log.txt";
   const testLogCsvPath = "./logs/test-log.csv";
 
@@ -17,7 +17,7 @@ describe("logDataToFile", () => {
   });
 
   test("logs data to a text file with default options", () => {
-    logDataToFile("Test log message", {
+    LogFlex("Test log message", {
       filePath: testLogTxtPath.replace(".txt", ""),
       fileType: "txt",
     });
@@ -27,7 +27,7 @@ describe("logDataToFile", () => {
   });
 
   test("logs data to a CSV file with custom options", () => {
-    logDataToFile("Custom log message", {
+    LogFlex("Custom log message", {
       filePath: testLogCsvPath.replace(".csv", ""),
       dateFormat: "yyyy/MM/dd HH:mm",
       logLevel: "error",

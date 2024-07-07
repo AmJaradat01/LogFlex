@@ -17,7 +17,7 @@ const defaultOptions: LogOptions = {
   fileType: 'txt'
 };
 
-export function logDataToFile(data: string, options: LogOptions = {}): void {
+export function LogFlex(data: string, options: LogOptions = {}): void {
   const { filePath, dateFormat, logLevel, fileType } = { ...defaultOptions, ...options };
   ensureDirectoryExists(path.dirname(filePath!));
 
